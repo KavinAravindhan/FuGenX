@@ -1,7 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { GlobalStyles } from './global-styles';
 import App from './app';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+render(<>
+        <GlobalStyles />
+        <App />
+        </>,
+    document.getElementById('root')
+);
 
