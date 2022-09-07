@@ -8,6 +8,8 @@ export default function App()
   return (
     <Router>
       <Routes>
+          <Route exact path="/browse" element={<Browse/>}/>
+          <Route exact path="/signin" element={<SignIn/>}/>
           <Route exact path="/signup" element={<SignUp/>}/>
           <Route exact path="/" element={<Home/>}/>
         </Routes>
