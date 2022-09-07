@@ -7,7 +7,7 @@ export default function App()
 {
   return (
     <Router>
-      <Route exact patn = "/signup">
+      <Route exact path = "/signup">
         <SignUp />
       </Route>
       <Route exact path = {ROUTES.HOME}>
