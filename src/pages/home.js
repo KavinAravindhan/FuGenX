@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Feature, OptForm } from '../components';
-// import { HeaderContainer } from '../containers/header';
+import { HeaderContainer } from '../container/header';
 import { JumbotronContainer } from '../container/jumbotron';
 import { FaqsContainer } from '../container/faqs';
 import { FooterContainer } from '../container/footer';
@@ -22,9 +22,11 @@ export default function Home()
             </Feature>
         </HeaderContainer> */}
 
-        <JumbotronContainer />
-        <FaqsContainer />
-        <FooterContainer />
+        <HeaderContainer>
+            <JumbotronContainer />
+            <FaqsContainer />
+            <FooterContainer />
+        </HeaderContainer>
     </>
     );
 }
