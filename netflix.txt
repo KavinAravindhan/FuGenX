@@ -1,0 +1,71 @@
+npm run start
+
+npm create-react-app netflix --use-npm
+
+yarn : File C:\Program Files\nodejs\yarn.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see 
+about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+
+Set-ExecutionPolicy -Scope "CurrentUser" -ExecutionPolicy "RemoteSigned"
+Set-ExecutionPolicy RemoteSigned 
+
+npm add styled-components
+yarn add styled-components
+
+yarn add firebase
+
+yarn add fuse.js
+
+yarn add normalize.css
+
+yarn start (or) npm run start
+
+-> Jumbotron is like what you see on the left and right side of netflix
+
+yarn add react-router-dom
+
+create fixtures folder in src
+add 2 files for jumbotrons which includes faq as well 
+jumbotron - landing page of netflix
+
+styled-components/macro
+macro is basically gonna give us the name of the components in the dev tools
+
+export const Inner = styled.div -> change the div to h1 or section and the part gets aligned differently. For our case, we will be using the div part.
+
+Jumbotron({children, direction = 'row', ...restProps}) -> compound component
+always get the children
+always the children comes down
+
+In js, you need to pass a key to do the iteration.
+For iteration you need an id.
+
+eslint not found
+npm install eslint --save-dev
+npm -g i eslint-cli
+npm i eslint --save-dev
+eslint --init
+
+npm init @eslint/config
+
+faqs == accordion
+toogle in faq to toggle the questions to open downwards on clicking the + 
+
+BrowserRouter & Router handle issues differently
+If you want to know the differences go to react-router.com 
+
+There is no SWITCH in react-router-dom
+Change SWITCH to ROUTES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
