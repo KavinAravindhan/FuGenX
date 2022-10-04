@@ -8,13 +8,15 @@ import * as ROUTES from '../constants/routes';
 
 export default function SignIn() 
 {
-    const history = useNavigate();
+    const navigate = useNavigate();
     const { firebase } = useContext(FirebaseContext);
 
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    // Check form input elements are valid
+    // email & password
     const isInvalid = password === '' || emailAddress === '';
 
     const handleSignin = (event) => {
@@ -26,7 +28,7 @@ export default function SignIn()
         .signInWithEmailAndPassword(emailAddress, password)
         .then(() => {
             // push to the browse page
-            history(ROUTES.BROWSE);
+            navigate(ROUTES.BROWSE);
         })
         .catch((error) => {
             setEmailAddress('');
@@ -48,6 +50,7 @@ export default function SignIn()
                     value={emailAddress}
                     onChange={({ target }) => setEmailAddress(target.value)}
                     />
+
                     <Form.Input
                     type="password"
                     value={password}
@@ -55,8 +58,9 @@ export default function SignIn()
                     placeholder="Password"
                     onChange={({ target }) => setPassword(target.value)}
                     />
+
                     <Form.Submit disabled={isInvalid} type="submit" data-testid="sign-in">
-                    Sign In
+                        Sign In
                     </Form.Submit>
                 </Form.Base>
 

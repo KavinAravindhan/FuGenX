@@ -8,7 +8,7 @@ import * as ROUTES from '../constants/routes';
 
 export default function SignUp() 
 {
-    const history = useNavigate();
+    const navigate = useNavigate();
     const { firebase } = useContext(FirebaseContext);
 
     const [firstName, setFirstName] = useState('');
@@ -21,6 +21,7 @@ export default function SignUp()
     const handleSignup = (event) => {
         event.preventDefault();
 
+        // Firebase stuff 
         return firebase
         .auth()
         .createUserWithEmailAndPassword(emailAddress, password)
@@ -31,7 +32,7 @@ export default function SignUp()
                 photoURL: Math.floor(Math.random() * 5) + 1,
             })
             .then(() => {
-                history(ROUTES.BROWSE);
+                navigate(ROUTES.BROWSE);
             })
         )
         .catch((error) => {
@@ -55,11 +56,13 @@ export default function SignUp()
                     value={firstName}
                     onChange={({ target }) => setFirstName(target.value)}
                     />
+
                     <Form.Input
                     placeholder="Email address"
                     value={emailAddress}
                     onChange={({ target }) => setEmailAddress(target.value)}
                     />
+
                     <Form.Input
                     type="password"
                     value={password}
@@ -67,8 +70,9 @@ export default function SignUp()
                     placeholder="Password"
                     onChange={({ target }) => setPassword(target.value)}
                     />
+
                     <Form.Submit disabled={isInvalid} type="submit" data-testid="sign-up">
-                    Sign Up
+                        Sign Up
                     </Form.Submit>
                 </Form.Base>
 
