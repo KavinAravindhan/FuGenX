@@ -11,15 +11,20 @@ export default function App()
 
   return (
     <Router>
-      <Routes>
-        <Route path="/signin" element={<SignIn/>}/>
-
-        <Route exact path="/signup" element={<SignUp/>}/>
+      <IsUserRedirect>
+        <Routes>
+          <Route exact path="/signin" element={<SignIn/>}/> 
+          <Route exact path="/signup" element={<SignUp/>}/>
+          
+          <Route exact path="/browse" element={
+            <ProtectedRoute>
+              <Browse/>
+            </ProtectedRoute>
+          }/>
         
-        <Route exact path="/browse" element={<Browse/>}/>
-      
-        <Route exact path="/" element={<Home/>}/> 
-      </Routes>
+          <Route exact path="/" element={<Home/>}/> 
+        </Routes>
+      </IsUserRedirect>
     </Router> 
   );
 }
