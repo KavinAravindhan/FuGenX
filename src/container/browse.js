@@ -24,6 +24,10 @@ export function BrowseContainer({ slides })
         }, 2000);
     }, [profile.displayName]);
 
+    useEffect(() => {
+        setSlideRows(slides[category]);
+    }, [slides, category]);
+
     return profile.displayName ? (
         <>
             {loading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />}
@@ -33,10 +37,10 @@ export function BrowseContainer({ slides })
                     <Header.Group>
                         <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
                         <Header.TextLink active={category === 'series' ? 'true' : 'false'} onClick={() => setCategory('series')}>
-                        Series
+                            Series
                         </Header.TextLink>
                         <Header.TextLink active={category === 'films' ? 'true' : 'false'} onClick={() => setCategory('films')}>
-                        Films
+                            Films
                         </Header.TextLink>
                     </Header.Group>
                     <Header.Group>
