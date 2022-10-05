@@ -40,7 +40,10 @@ export function BrowseContainer({ slides })
                         </Header.TextLink>
                     </Header.Group>
                     <Header.Group>
-                        <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                        <Header.Search 
+                            searchTerm={searchTerm} 
+                            setSearchTerm={setSearchTerm} 
+                        />
                         <Header.Profile>
                             <Header.Picture src={user.photoURL} />
                             <Header.Dropdown>
