@@ -200,7 +200,7 @@ export const Logo = styled.img`
     margin-right: 40px;
     margin-top: 160px;
     @media (min-width: 1449px) {
-        height: 250px;
+        height: 180px;
         width: 200px;
     }
 `;
